@@ -1,0 +1,24 @@
+1. minimun install.
+
+2. sysctl.conf
+vm.swappiness=25
+fs.file-max=25000
+vm.overcommit_memory=1
+net.core.somaxconn=4096
+
+3. /etc/security/limits.conf
+* soft nofile 4096
+* hard nofile 10240
+root soft nofile 4096
+root hard nofile 10240
+redis soft nofile 4096
+redis hard nofile 10240
+
+4. echo never > /sys/kernel/mm/transparent_hugepage/enabled
+
+5. apt install redis
+
+6. /etc/redis/redis.conf
+bind 0.0.0.0
+protected-mode no
+supervised systemd
