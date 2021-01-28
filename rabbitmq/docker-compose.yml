@@ -1,0 +1,16 @@
+version: "3"
+services: 
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq-dev
+#    volumes:
+#      - ./.docker/rabbitmq/etc/:/etc/rabbitmq/
+#      - ./.docker/rabbitmq/data/:/var/lib/rabbitmq/mnesia
+#      - ./.docker/rabbitmq/logs/:/var/log/rabbitmq/
+    environment: 
+      RABBITMQ_DEFAULT_USER: rabbitmq
+      RABBITMQ_DEFAULT_PASS: rabbitmq
+      RABBITMQ_ERLANG_COOKIE: s3cr3tc00ki3
+    ports:
+      - "5672:5672"
+      - "15672:15672"
