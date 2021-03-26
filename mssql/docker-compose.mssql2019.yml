@@ -12,3 +12,4 @@ services:
       - 1433:1433
     volumes:
       - ./.docker/data:/var/opt/mssql/data
+      - ./.docker/log:/var/opt/mssql/log
