@@ -1,8 +1,16 @@
-version: "3"
+version: "3.5"
 services: 
   mssql-2019:
     image: mcr.microsoft.com/mssql/server:2019-latest
     container_name: mssql2019
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 2048M
+        reservations:
+          cpus: '0.5'
+          memory: 2048M
     hostname: localhost
     environment: 
       - 'ACCEPT_EULA=Y'
