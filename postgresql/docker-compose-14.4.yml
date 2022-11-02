@@ -1,19 +1,19 @@
-version: "3.1"
+version: "3.8"
 services: 
   postgres:
-    image: postgres:13.4-alpine
+    image: postgres:14.4-alpine
     deploy:
       resources:
         limits:
-          cpus: '0.5'
-          memory: 512M
+#          cpus: '0.5'
+          memory: 1024M
         reservations:
-          cpus: '0.25'
+#          cpus: '0.25'
           memory: 512M
-    container_name: postgres-13-4
+    container_name: postgres-14-4
     environment: 
       POSTGRES_PASSWORD: pgadmin
-      PGDATA: /var/lib/postgresql/data/
+      PGDATA: /var/lib/postgresql/data/pgdata
     ports:
       - "5432:5432"
     volumes: 

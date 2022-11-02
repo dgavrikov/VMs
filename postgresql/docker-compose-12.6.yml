@@ -1,8 +1,8 @@
 version: "3.1"
 services: 
   postgres:
-    image: postgres:12.6-alpine
-    container_name: postgres-12-6
+    image: postgres:12.11-alpine
+    container_name: postgres-12-11
     environment: 
       POSTGRES_PASSWORD: pgadmin
       PGDATA: /var/lib/postgresql/data/
